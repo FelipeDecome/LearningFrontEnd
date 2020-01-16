@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat&display=swap');
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Josefin Sans', sans-serif; 
+*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+}
+
+h1#title {
+    font-size: 48px;
+}
+
+#wrap-content {
+    height: 100vh;
+}
+
+#wrap-form {
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#form-title {
+    position: relative;
+    text-align: center;
+}
+
+#txt-back {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: #F0EFEF;
+    font-size: 115px;
+}
+
+#title {
+    margin-top: -83px;
+    color: #B21CB5;
+}
+
+.fields {
+    width: 350px;
+    height: 50px;
+}
+
+.fields input {
+    width: 100%;
+    height: 100%;
+}
