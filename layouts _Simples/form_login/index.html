@@ -18,15 +18,30 @@
                 <span id="txt-back">Login</span>
                 <h1 id="title">Entrar</h1>
             </div>
-            <div class="fields">
-                <input type="text" name="name" autocomplete="off" required>
-                <label for="name">
-                    <span class="content-name">Name:</span>
-                </label>
+            <div id="wrap-fields">
+                <div class="fields">
+                    <input type="text" name="name" autocomplete="off" onclick="toggleFocusInput(this)" required>
+                    <label for="name">
+                        <span class="content-name">Name</span>
+                    </label>
+                </div>
+                <div class="fields">
+                    <input type="password" name="pass" autocomplete="off" onclick="toggleFocusInput(this)" required>
+                    <label for="name">
+                        <span class="content-name">Senha</span>
+                    </label>
+                </div>
+                <div class="fields" id="wrap-btn">
+                    <a href="#" class="btn" id="send">Entrar</a>
+                    <a href="#" class="btn">Não tem uma conta?</a>
+                    <a href="#" class="btnForgot"> Esqueceu sua senha <span>?</span> </a>
+                </div>
             </div>
 
         </main>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
