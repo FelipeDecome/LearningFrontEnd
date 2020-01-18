@@ -1,84 +1,89 @@
-const btnSend = document.querySelector('.fields .btn#send');
+const wrapBoxes = document.querySelector('ul.wrap-boxes');
 
-btnSend.addEventListener('mouseover', function () {
+const boxesQuantity = 15;
+const colors = ['#B21CB5', '#05C6BD'];
+const minSize = 120;
+const maxSize = 10;
+const minDelay = 0;
+const maxDelay = 5000;
+const minDuration = 5000;
+const maxDuration = 15000;
 
-    removeHoverOut();
-    btnSend.classList.add('hover');
 
-});
+function randomColor () {
+    let rdmNum = Math.floor(Math.random() * 16);
 
-btnSend.addEventListener('mouseout', function () {
-
-    removeHoverOut();
-    btnSend.classList.add('out');
-
-});
-
-function removeHoverOut() {
-
-    if (btnSend.classList.contains('hover')) {
-        btnSend.classList.remove('hover');
-    }
-
-    if (btnSend.classList.contains('out')) {
-        btnSend.classList.remove('out');
+    if ((rdmNum % 2) == 0) {
+        return colors[0];
+    } else {
+        return colors[1]
     }
 }
 
-/* function toggleFocusInput(input) {
-    let parent = input.parentNode;
+function randomReverse() {
+    let rdmNum = Math.floor(Math.random() * 16);
 
-    if (input.classList.contains('out') || !input.classList.contains('focus')) {
-
-        resetToggleFocusInput();
-
-        parent.classList.add('focus');
-
-    } else if (input.classList.contains('focus')) {
-
-        resetToggleFocusInput();
-
-        parent.classList.add('out');
+    if ((rdmNum % 2) == 0) {
+        return 'reverse';
+    } else {
+        return 'normal';
     }
-
-
-
 }
 
-function resetToggleFocusInput() {
+function randomSize() {
+    let rdmNum = Math.floor(Math.random() * (maxSize - minSize) + minSize);
+    return rdmNum;
+  }
 
-    // const inputs = document.querySelectorAll('.fields input');
-    // for (input of inputs) {
-
-    //     let parent = input.parentNode;
-    //     if (parent.classList.contains('focus')) {
-    //         parent.classList.remove('focus');
-    //     } else if (parent.classList.contains('out')) {
-    //         parent.classList.remove('out');
-    //     }
-
-    // }
-
-    let inputFocus = document.querySelector('.fields.focus input');
-    let inputOut = document.querySelector('.fields.out input');
-
-    console.log(inputOut, inputFocus);
-
-    if (inputFocus != null) {
-
-        let parent = inputFocus.parentNode;
-
-        parent.classList.remove('focus');
-        parent.classList.add('out');
-
-    } else if (inputOut != null) {
-
-        let parent = inputOut.parentNode;
-
-        parent.classList.remove('out');
-
-    }
-
-
+function randomOpacity() {
+    let rdmNum = (Math.floor(Math.random() * (10 - 1) + 1)) / 10;
+    return rdmNum;
 }
- */
+
+function randomPosition() {
+    let rdmNum = Math.floor(Math.random() * (99 - 1) + 1);
+    return rdmNum;
+}
+
+function randomDuration() {
+    let rdmNum = Math.floor(Math.random() * (maxDuration - minDuration) + minDuration);
+    return rdmNum;
+}
+
+function randomDelay() {
+    let rdmNum = Math.floor(Math.random() * (maxDelay - minDelay) + minDelay);
+    return rdmNum;
+}
+
+for (let i = 1;i < boxesQuantity; i++) {
+
+    const li = document.createElement('li');
+
+    let color = randomColor();
+    let size = randomSize();
+    let opacity = randomOpacity();
+    let position = randomPosition();
+    let duration = randomDuration();
+    let delay = randomDelay();
+    let reverse = randomReverse();
+
+
+    li.style.width = `${size}px`;
+    li.style.height = `${size}px`;
+    li.style.bottom = `-${size}px`;
+    li.style.left = `${position}%`;
+
+    li.style.opacity = opacity;
+    li.style.background = color;
+
+    li.style.animationDuration = `${duration}ms`;
+    li.style.animationDelay = `${delay}ms`;
+    li.style.animationDirection = reverse;
+    li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+
+    li.style.transition = `all ease ${duration}`;
+
+    wrapBoxes.appendChild(li);
+
+    console.log(randomColor(), randomSize(), randomOpacity());
+}
