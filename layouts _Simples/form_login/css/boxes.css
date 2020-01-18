@@ -1,0 +1,24 @@
+.wrap-boxes li {
+    position: absolute;
+    display: block;
+    z-index: -10;
+    animation: up ease infinite;
+}
+
+@keyframes up {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100vh) rotateX(960deg) rotateY(960deg);
+        opacity: 0;
+
+    }
+}

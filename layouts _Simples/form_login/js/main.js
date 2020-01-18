@@ -10,7 +10,7 @@ const minDuration = 5000;
 const maxDuration = 15000;
 
 
-function randomColor () {
+function randomColor() {
     let rdmNum = Math.floor(Math.random() * 16);
 
     if ((rdmNum % 2) == 0) {
@@ -33,7 +33,7 @@ function randomReverse() {
 function randomSize() {
     let rdmNum = Math.floor(Math.random() * (maxSize - minSize) + minSize);
     return rdmNum;
-  }
+}
 
 function randomOpacity() {
     let rdmNum = (Math.floor(Math.random() * (10 - 1) + 1)) / 10;
@@ -55,7 +55,7 @@ function randomDelay() {
     return rdmNum;
 }
 
-for (let i = 1;i < boxesQuantity; i++) {
+for (let i = 1; i < boxesQuantity; i++) {
 
     const li = document.createElement('li');
 
@@ -64,7 +64,7 @@ for (let i = 1;i < boxesQuantity; i++) {
     let opacity = randomOpacity();
     let position = randomPosition();
     let duration = randomDuration();
-    let delay = randomDelay();
+    let delay = (i == 1) ? 1 : randomDelay();
     let reverse = randomReverse();
 
 
@@ -84,6 +84,4 @@ for (let i = 1;i < boxesQuantity; i++) {
     li.style.transition = `all ease ${duration}`;
 
     wrapBoxes.appendChild(li);
-
-    console.log(randomColor(), randomSize(), randomOpacity());
 }

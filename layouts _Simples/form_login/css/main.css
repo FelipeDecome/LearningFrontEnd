@@ -69,7 +69,7 @@ button {
 .txt-back {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
-    color: #F0EFEF;
+    color: #e9e9e9;
     font-size: 80px;
 }
 
@@ -103,7 +103,7 @@ button {
     animation: fadeInInputs ease-in-out 1s;
     animation-fill-mode: backwards;
     pointer-events: none;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: 1px solid #999;
 }
 
 .fields:nth-child(2) label {
@@ -115,7 +115,7 @@ button {
     bottom: 8px;
     left: 8px;
     transition: all ease-out 300ms;
-    color: #b6b6b6;
+    color: #333;
 }
 
 .fields label::after {
@@ -222,7 +222,7 @@ a.btn:first-child:hover+.background-btn {
     margin-top: 12px;
     font-size: 14px;
     font-weight: 600;
-    color: #b6b6b6;
+    color: #666;
     transition: color ease-out 300ms;
 }
 
@@ -238,7 +238,7 @@ a.btn:first-child:hover+.background-btn {
 }
 
 .copyright p {
-    color: #999;
+    color: #666;
     font-size: 14px;
 }
 
@@ -246,13 +246,6 @@ a.btn:first-child:hover+.background-btn {
     color: #B21CB5;
     font-weight: 600;
     font-size: inherit;
-}
-
-.wrap-boxes li {
-    position: absolute;
-    display: block;
-    z-index: -10;
-    animation: up ease infinite;
 }
 
 @media (min-width:425px) {
@@ -372,23 +365,5 @@ a.btn:first-child:hover+.background-btn {
 
     to {
         opacity: 1;
-    }
-}
-
-@keyframes up {
-    from {
-        transform: translateY(0);
-        opacity: 0;
-
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(-100vh) rotateX(960deg) rotateY(960deg);
-        opacity: 0;
-
     }
 }
