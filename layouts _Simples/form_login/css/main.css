@@ -17,6 +17,8 @@ font-family: 'Josefin Sans', sans-serif;
 
 body {
     overflow: hidden;
+    -webkit-perspective: 800px;
+    perspective: 800px;
 }
 
 input,
@@ -379,9 +381,11 @@ a.btn:first-child:hover+.background-btn {
         opacity: 0;
 
     }
+
     50% {
         opacity: 1;
     }
+
     to {
         transform: translateY(-100vh) rotateX(960deg) rotateY(960deg);
         opacity: 0;
