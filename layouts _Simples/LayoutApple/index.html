@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
 
-        <link rel="stylesheet" href="css/main.css" />
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <section class="grid">
         <div class="main-wrapper">
             <div class="info-wrapper">
                 <h2>iPhone 11</h2>
                 <h3>Just the right amount of everything.</h3>
 
                 <p>
-                    <span
-                        >From $18.70/mo.
-                        or&nbsp;$449&nbsp;with&nbsp;trade‑in.</span
-                    ><sup><a href="#">1</a></sup>
+                    <span>From $18.70/mo.
+                        or&nbsp;$449&nbsp;with&nbsp;trade‑in.</span><sup><a href="#">1</a></sup>
                 </p>
 
                 <div class="links-wrapper">
@@ -28,10 +32,92 @@
             </div>
 
             <div class="video-wrapper">
-                <video src="video/teste.mp4"></video>
+                <video src="video/teste.mp4" muted crossorigin="anonymous"></video>
+            </div>
+        </div>
+        <div class="main-wrapper">
+            <div class="info-wrapper">
+                <p>
+                    16-inchs model
+                </p>
+
+                <h2>MacBook Pro</h2>
+                <h3>The best for the brightest.</h3>
+
+                <div class="links-wrapper">
+                    <a href="#">Learn more > </a>
+                    <a href="#">Buy > </a>
+                </div>
+            </div>
+
+            <div class="video-wrapper">
+                <video src="video/video2-1.mp4" muted crossorigin="anonymous"></video>
             </div>
         </div>
 
-        <script src="js/main.js"></script>
-    </body>
+        <div class="main-wrapper">
+            <div class="info-wrapper">
+                <p>
+                    The new
+                </p>
+
+                <h2>iPad</h2>
+                <h3>Like a computer. Unlike any computer.</h3>
+
+                <div class="links-wrapper">
+                    <a href="#">Learn more > </a>
+                    <a href="#">Buy > </a>
+                </div>
+            </div>
+
+            <div class="video-wrapper">
+                <video src="video/video3-1.mp4" muted crossorigin="anonymous"></video>
+            </div>
+        </div>
+
+        <div class="main-wrapper dark">
+            <div class="info-wrapper">
+                <h2>TV 4K</h2>
+                <h3>Cinematic in every sense.</h3>
+
+                <div class="links-wrapper">
+                    <a href="#">Learn more > </a>
+                    <a href="#">Buy > </a>
+                </div>
+            </div>
+
+            <div class="video-wrapper">
+                <video src="video/video4-1.mp4" muted crossorigin="anonymous"></video>
+            </div>
+        </div>
+
+        <div class="main-wrapper dark">
+            <div class="info-wrapper top">
+                <h2>AirPods Pro</h2>
+                <h3>Magic like you've never heard.</h3>
+
+                <div class="links-wrapper">
+                    <a href="#">Learn more > </a>
+                    <a href="#">Buy > </a>
+                </div>
+            </div>
+
+            <div class="info-wrapper bottom">
+                <h3>A new world to play in. <br> 100+ new games, ad-free.</h3>
+
+                <div class="links-wrapper">
+                    <a href="#">Try it free > </a>
+                    <a href="#">Learn more > </a>
+                </div>
+            </div>
+
+            <div class="video-wrapper" id="textAnimate">
+                <video src="video/video5-1.mp4" muted crossorigin="anonymous" onplay="executeOnPlay()"></video>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
 </html>

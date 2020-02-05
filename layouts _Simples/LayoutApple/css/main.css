@@ -7,7 +7,11 @@
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #EEE;
 }
 
 h2 {
@@ -30,28 +34,44 @@ p {
     color: rgb(137, 137, 137);
 }
 
+.dark h2,
+.dark h3 {
+    color: #FFF;
+}
+
+
+.grid {
+    display: grid;
+    row-gap: 15px;
+}
+
 .links-wrapper {
     margin-top: 20px;
 }
 
-.links-wrapper > a {
+.links-wrapper>a {
     font-size: 20px;
     margin: 0 20px;
     color: #06c;
 }
 
-.links-wrapper > a:hover {
+.links-wrapper>a:hover {
     text-decoration: underline;
 }
 
 .main-wrapper {
     position: relative;
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    background-color: white;
+    overflow: hidden;
+}
+
+.dark {
+    background-color: #000;
 }
 
 .info-wrapper {
@@ -59,10 +79,54 @@ p {
     top: 0;
     padding-top: 65px;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
+}
+
+.bottom {
+    top: unset;
+    bottom: 0;
+    padding-bottom: 65px;
+}
+
+.animate.info-wrapper.top {
+    animation: showUp ease 3s forwards;
+}
+
+.animate.info-wrapper.bottom {
+    animation: showDown ease 3s backwards 2s;
 }
 
 .video-wrapper {
-    width: 1068px;
+    width: 1440px;
     height: 650px;
+    overflow: hidden;
+}
+
+video {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes showUp {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: -200px;
+    }
+}
+
+@keyframes showDown {
+    from {
+        bottom: -200px;
+    }
+
+    to {
+        bottom: 0;
+    }
 }
