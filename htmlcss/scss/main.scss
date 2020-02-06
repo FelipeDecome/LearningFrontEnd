@@ -1,0 +1,19 @@
+@mixin background-cover($url) {
+  background-image: url("./../images/barbearia.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 300px;
+  @include background-cover("./../images/barbearia.png");
+}
