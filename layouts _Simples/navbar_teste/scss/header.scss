@@ -1,0 +1,32 @@
+@import "main.scss";
+
+header {
+  width: 100%;
+  background-color: $navbar-background;
+
+  .header-components-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // .header-component {
+
+    // }
+  }
+}
+
+navbar {
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .nav-item {
+      padding: 10px 20px;
+    }
+
+    // .nav-item a {
+    // }
+  }
+}
