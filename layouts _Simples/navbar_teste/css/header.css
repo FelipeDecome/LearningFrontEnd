@@ -9,12 +9,12 @@ header .header-components-wrapper {
   align-items: center;
 }
 
-navbar .nav-list {
+nav .nav-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-navbar .nav-list .nav-item {
+nav .nav-list .nav-item {
   padding: 10px 20px;
 }
 
