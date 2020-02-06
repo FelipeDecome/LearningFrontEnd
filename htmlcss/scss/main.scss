@@ -1,8 +1,28 @@
+$purple: #b21cb5;
+
 @mixin background-cover($url) {
-  background-image: url("./../images/barbearia.png");
+  background-image: url($url);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@mixin flex($width, $direction, $justify: true, $align: true) {
+  width: $width;
+  display: flex;
+  flex-direction: $direction;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+}
+
+@mixin title {
+  padding: 50px 0;
+  text-align: center;
 }
 
 * {
@@ -15,5 +35,36 @@
 header {
   width: 100%;
   height: 300px;
-  @include background-cover("./../images/barbearia.png");
+  @include background-cover("./../images/chairs.jpg");
+}
+
+main,
+section {
+  @include flex(100%, row, center, false);
+}
+
+section {
+  // @include bor;
+}
+
+/*! TESTE*/
+.main-wrapper,
+.beneficios-wrapper {
+  @include flex(50%, column, false, false);
+  padding: 50px 0;
+}
+
+.text-blocks-wrapper {
+  @include flex(100%, row, false, stretch);
+
+  .text-block {
+    width: 100%;
+    padding: 0 30px;
+    border-left: 2px solid $purple;
+  }
+}
+
+.title h1,
+.title h2 {
+  @include title();
 }

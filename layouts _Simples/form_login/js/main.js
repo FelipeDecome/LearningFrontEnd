@@ -11,77 +11,77 @@ const maxDuration = 15000;
 
 
 function randomColor() {
-    let rdmNum = Math.floor(Math.random() * 16);
+  let rdmNum = Math.floor(Math.random() * 16);
 
-    if ((rdmNum % 2) == 0) {
-        return colors[0];
-    } else {
-        return colors[1]
-    }
+  if ((rdmNum % 2) == 0) {
+    return colors[0];
+  } else {
+    return colors[1]
+  }
 }
 
 function randomReverse() {
-    let rdmNum = Math.floor(Math.random() * 16);
+  let rdmNum = Math.floor(Math.random() * 16);
 
-    if ((rdmNum % 2) == 0) {
-        return 'reverse';
-    } else {
-        return 'normal';
-    }
+  if ((rdmNum % 2) == 0) {
+    return 'reverse';
+  } else {
+    return 'normal';
+  }
 }
 
 function randomSize() {
-    let rdmNum = Math.floor(Math.random() * (maxSize - minSize) + minSize);
-    return rdmNum;
+  let rdmNum = Math.floor(Math.random() * (maxSize - minSize) + minSize);
+  return rdmNum;
 }
 
 function randomOpacity() {
-    let rdmNum = (Math.floor(Math.random() * (10 - 1) + 1)) / 10;
-    return rdmNum;
+  let rdmNum = (Math.floor(Math.random() * (10 - 1) + 1)) / 10;
+  return rdmNum;
 }
 
 function randomPosition() {
-    let rdmNum = Math.floor(Math.random() * (99 - 1) + 1);
-    return rdmNum;
+  let rdmNum = Math.floor(Math.random() * (99 - 1) + 1);
+  return rdmNum;
 }
 
 function randomDuration() {
-    let rdmNum = Math.floor(Math.random() * (maxDuration - minDuration) + minDuration);
-    return rdmNum;
+  let rdmNum = Math.floor(Math.random() * (maxDuration - minDuration) + minDuration);
+  return rdmNum;
 }
 
 function randomDelay() {
-    let rdmNum = Math.floor(Math.random() * (maxDelay - minDelay) + minDelay);
-    return rdmNum;
+  let rdmNum = Math.floor(Math.random() * (maxDelay - minDelay) + minDelay);
+  return rdmNum;
 }
 
 for (let i = 1; i < boxesQuantity; i++) {
 
-    const li = document.createElement('li');
+  const li = document.createElement('li');
 
-    let color = randomColor();
-    let size = randomSize();
-    let opacity = randomOpacity();
-    let position = randomPosition();
-    let duration = randomDuration();
-    let delay = (i == 1) ? 1 : randomDelay();
-    let reverse = randomReverse();
+  let color = randomColor();
+  let size = randomSize();
+  let opacity = randomOpacity();
+  let position = randomPosition();
+  let duration = randomDuration();
+  let delay = (i == 1) ? 1 : randomDelay();
+  let reverse = randomReverse();
 
 
-    li.style.width = `${size}px`;
-    li.style.height = `${size}px`;
-    li.style.bottom = `-${size}px`;
-    li.style.left = `${position}%`;
+  li.style.width = `${size}px`;
+  li.style.height = `${size}px`;
+  li.style.bottom = `-${size}px`;
+  li.style.left = `${position}%`;
 
-    li.style.opacity = opacity;
-    li.style.background = color;
+  li.style.opacity = opacity;
+  li.style.background = color;
 
-    li.style.animationDuration = `${duration}ms`;
-    li.style.animationDelay = `${delay}ms`;
-    li.style.animationDirection = reverse;
-    li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+  li.style.animationDuration = `${duration}ms`;
+  li.style.animationDelay = `${delay}ms`;
+  li.style.animationDirection = reverse;
+  li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
 
-    li.style.transition = `all ease ${duration}`;
+  li.style.transition = `all ease ${duration}`;
 
-    wrapBoxes.appendChild(li);
+  wrapBoxes.appendChild(li);
 }
