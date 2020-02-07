@@ -1,0 +1,32 @@
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(borderToRight) {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: initial;
+  }
+}
+
+@include keyframes(borderToDown) {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: initial;
+  }
+}
