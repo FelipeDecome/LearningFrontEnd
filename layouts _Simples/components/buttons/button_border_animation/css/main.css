@@ -1,100 +1,175 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:700&display=swap");
 @-webkit-keyframes borderToRight {
   from {
+    opacity: 0;
     width: 0;
-  }
-  to {
-    width: 100%;
   }
 }
 @-moz-keyframes borderToRight {
   from {
+    opacity: 0;
     width: 0;
-  }
-  to {
-    width: 100%;
   }
 }
 @-ms-keyframes borderToRight {
   from {
+    opacity: 0;
     width: 0;
-  }
-  to {
-    width: 100%;
   }
 }
 @keyframes borderToRight {
   from {
+    opacity: 0;
     width: 0;
-  }
-  to {
-    width: 100%;
   }
 }
 @-webkit-keyframes borderToDown {
   from {
+    opacity: 0;
     height: 0;
-  }
-  to {
-    height: initial;
   }
 }
 @-moz-keyframes borderToDown {
   from {
+    opacity: 0;
     height: 0;
-  }
-  to {
-    height: initial;
   }
 }
 @-ms-keyframes borderToDown {
   from {
+    opacity: 0;
     height: 0;
-  }
-  to {
-    height: initial;
   }
 }
 @keyframes borderToDown {
   from {
+    opacity: 0;
     height: 0;
   }
-  to {
-    height: initial;
-  }
 }
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button-wrapper {
   position: relative;
   width: 150px;
   height: 50px;
+  margin: 0px 3px;
 }
 .button-wrapper button {
   width: 100%;
   height: 100%;
+  background: transparent;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 300ms;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
-.button-wrapper li {
+.button-wrapper button:hover ~ ul > li {
   position: absolute;
-  height: 100%;
+  height: calc(100% - 3px);
+  width: calc(100% - 3px);
+  pointer-events: none;
 }
-.button-wrapper li:first-child {
-  border-top: 3px solid #b21cb5;
-  -webkit-animation: borderToRight 1s ease 0s;
-  -moz-animation: borderToRight 1s ease 0s;
-  -ms-animation: borderToRight 1s ease 0s;
-  -o-animation: borderToRight 1s ease 0s;
-  animation: borderToRight 1s ease 0s;
+.button-wrapper button:hover ~ ul > li:first-child {
+  border-top: 3px solid;
 }
-.button-wrapper li:first-child, .button-wrapper li:nth-child(2) {
-  width: 100%;
+.button-wrapper button:hover ~ ul > li:first-child, .button-wrapper button:hover ~ ul > li:nth-child(2) {
   top: 0;
   left: 0;
 }
-.button-wrapper li:nth-child(3), .button-wrapper li:nth-child(4) {
-  width: 50%;
+.button-wrapper button:hover ~ ul > li:nth-child(2) {
+  border-right: 3px solid;
+}
+.button-wrapper button:hover ~ ul > li:nth-child(3) {
+  border-bottom: 3px solid;
+}
+.button-wrapper button:hover ~ ul > li:first-child, .button-wrapper button:hover ~ ul > li:nth-child(3) {
+  -webkit-animation: borderToRight 300ms ease 0s normal backwards;
+  -moz-animation: borderToRight 300ms ease 0s normal backwards;
+  -ms-animation: borderToRight 300ms ease 0s normal backwards;
+  -o-animation: borderToRight 300ms ease 0s normal backwards;
+  animation: borderToRight 300ms ease 0s normal backwards;
+}
+.button-wrapper button:hover ~ ul > li:nth-child(2), .button-wrapper button:hover ~ ul > li:nth-child(4) {
+  -webkit-animation: borderToDown 300ms ease 300ms normal backwards;
+  -moz-animation: borderToDown 300ms ease 300ms normal backwards;
+  -ms-animation: borderToDown 300ms ease 300ms normal backwards;
+  -o-animation: borderToDown 300ms ease 300ms normal backwards;
+  animation: borderToDown 300ms ease 300ms normal backwards;
+}
+.button-wrapper button:hover ~ ul > li:nth-child(3), .button-wrapper button:hover ~ ul > li:nth-child(4) {
   right: 0;
   bottom: 0;
 }
-.button-wrapper li:nth-child(4) {
-  height: 50%;
+.button-wrapper button:hover ~ ul > li:nth-child(4) {
+  border-left: 3px solid;
+}
+
+.button-wrapper.purple button {
+  background-color: #b21cb5;
+}
+.button-wrapper.purple button:hover {
+  background-color: transparent;
+  color: #b21cb5;
+}
+.button-wrapper.purple button:hover ~ ul > li {
+  border-color: #b21cb5;
+}
+
+.button-wrapper.blue button {
+  background-color: #00668c;
+}
+.button-wrapper.blue button:hover {
+  background-color: transparent;
+  color: #00668c;
+}
+.button-wrapper.blue button:hover ~ ul > li {
+  border-color: #00668c;
+}
+
+.button-wrapper.red button {
+  background-color: #ff3f3f;
+}
+.button-wrapper.red button:hover {
+  background-color: transparent;
+  color: #ff3f3f;
+}
+.button-wrapper.red button:hover ~ ul > li {
+  border-color: #ff3f3f;
+}
+
+.button-wrapper.yellow button {
+  background-color: #efa300;
+}
+.button-wrapper.yellow button:hover {
+  background-color: transparent;
+  color: #efa300;
+}
+.button-wrapper.yellow button:hover ~ ul > li {
+  border-color: #efa300;
+}
+
+.button-wrapper.green button {
+  background-color: #1dc6a7;
+}
+.button-wrapper.green button:hover {
+  background-color: transparent;
+  color: #1dc6a7;
+}
+.button-wrapper.green button:hover ~ ul > li {
+  border-color: #1dc6a7;
 }
 
 /*# sourceMappingURL=main.css.map */

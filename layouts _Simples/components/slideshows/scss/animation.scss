@@ -13,16 +13,21 @@
   }
 }
 
-@include keyframes(borderToRight) {
+@include keyframes(appearRight) {
   from {
+    right: -1024px;
     opacity: 0;
-    width: 0;
+  }
+  85% {
+    right: 50px;
+  }
+  to {
+    right: 0;
   }
 }
 
-@include keyframes(borderToDown) {
-  from {
-    opacity: 0;
-    height: 0;
+@include keyframes(fadeToBack) {
+  to {
+    transform: scale(0);
   }
 }

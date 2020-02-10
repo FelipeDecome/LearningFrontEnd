@@ -1,3 +1,8 @@
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$mobile: 1200px;
+
 $purple: #b21cb5;
 
 @mixin background-cover($url) {
@@ -7,7 +12,7 @@ $purple: #b21cb5;
   background-size: cover;
 }
 
-@mixin flex($width, $direction, $justify: true, $align: true) {
+@mixin flex($width, $direction, $justify: false, $align: false) {
   width: $width;
   display: flex;
   flex-direction: $direction;
@@ -43,14 +48,15 @@ section {
   @include flex(100%, row, center, false);
 }
 
-section {
-  // @include bor;
-}
-
-/*! TESTE*/
 .main-wrapper,
 .beneficios-wrapper {
-  @include flex(50%, column, false, false);
+  @if (100vw >= 1200) {
+    @include flex(50%, column);
+  } @else if(100vw <= 1199 && 100vw >= 768) {
+    @include flex(80%, column);
+  } @else if(100vw <= 767) {
+    @include flex(80%, column);
+  }
   padding: 50px 0;
 }
 

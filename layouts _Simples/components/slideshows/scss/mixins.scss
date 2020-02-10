@@ -1,0 +1,35 @@
+$vendors: ("-webkit-", "-moz-", "-ms-", "-o-", "");
+
+@mixin boxShadow($rule) {
+  @each $vendor in $vendors {
+    #{$vendor}box-shadow: $rule;
+  }
+}
+
+@mixin animation(
+  $name,
+  $time,
+  $timing: ease,
+  $delay: 0s,
+  $diraction: normal,
+  $fill: backwards
+) {
+  @each $vendor in $vendors {
+    #{$vendor}animation: #{$name $time $timing $delay $diraction $fill};
+  }
+}
+
+@mixin absPos($t: true, $r: true, $b: true, $l: true) {
+  @if $t {
+    top: $t;
+  }
+  @if $r {
+    right: $r;
+  }
+  @if $b {
+    bottom: $b;
+  }
+  @if $l {
+    left: $l;
+  }
+}

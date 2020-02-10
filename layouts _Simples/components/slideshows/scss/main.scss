@@ -1,0 +1,99 @@
+@import "mixins.scss";
+@import "animation.scss";
+
+$purple: #b21cb5;
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  background: transparent;
+}
+
+@mixin flex($width, $direction, $justify: false, $align: false) {
+  width: $width;
+  display: flex;
+  flex-direction: $direction;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+}
+
+.wrapper {
+  @include flex(100%, column, center, center);
+}
+
+.slide-wrapper {
+  position: relative;
+  @include flex(1024, row);
+  height: 720px;
+  overflow: hidden;
+}
+
+.image-list {
+  @include flex(inherit, row);
+
+  & .image img {
+    position: absolute;
+    width: 1024px;
+    height: 720px;
+  }
+
+  & .image.active img {
+    @include animation(appearRight, 1s, ease);
+  }
+
+  & .image.fade img {
+    @include animation(fadeToBack, 1s, ease);
+  }
+
+  & .image .image-info {
+    @include flex(100%, column, false, center);
+    position: absolute;
+    padding: 40px 0;
+    background-color: rgba(37, 37, 37, 0.3);
+    bottom: 50px;
+    left: 0;
+
+    & p {
+      text-indent: 30px;
+      width: 80%;
+    }
+
+    & * {
+      margin: 10px 0;
+    }
+  }
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  @include flex(100%, column, center);
+
+  & .control-list {
+    @include flex(100%, row, center);
+
+    & .control {
+      width: 15px;
+      height: 15px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background-color: rgba(37, 37, 37, 0.3);
+      transition: all 300ms;
+      cursor: pointer;
+
+      &:hover,
+      &.active {
+        background-color: $purple;
+      }
+    }
+  }
+}

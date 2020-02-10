@@ -1,62 +1,159 @@
 @import "animations.scss";
+@import "mixins.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:700&display=swap");
 
 $purple: #b21cb5;
-$border: #{3px solid $purple};
-$vendors: ("-webkit-", "-moz-", "-ms-", "-o-", "");
+$yellow: #efa300;
+$blue: #00668c;
+$red: #ff3f3f;
+$green: #1dc6a7;
+$black20: rgba(0, 0, 0, 0.2);
 
-@mixin animation($name, $time, $delay) {
-  @each $vendor in $vendors {
-    #{$vendor}animation: #{$name $time ease $delay};
-  }
-}
+$border: #{3px solid};
+$size: calc(100% - 3px);
 
-@mixin absPos($t: true, $r: true, $b: true, $l: true) {
-  @if $t {
-    top: $t;
-  }
-  @if $r {
-    right: $r;
-  }
-  @if $b {
-    bottom: $b;
-  }
-  @if $l {
-    left: $l;
-  }
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-wrapper {
   position: relative;
   width: 150px;
   height: 50px;
+  margin: 0px 3px;
 
   button {
     width: 100%;
     height: 100%;
+    background: transparent;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 300ms;
+    @include boxShadow(3px 3px 10px $black20);
+
+    &:hover ~ ul > li {
+      position: absolute;
+      height: $size;
+      width: $size;
+      pointer-events: none;
+
+      &:first-child {
+        border-top: $border;
+      }
+
+      &:first-child,
+      &:nth-child(2) {
+        @include absPos(0, false, false, 0);
+      }
+
+      &:nth-child(2) {
+        border-right: $border;
+      }
+
+      &:nth-child(3) {
+        border-bottom: $border;
+      }
+
+      &:first-child,
+      &:nth-child(3) {
+        @include animation(borderToRight, 300ms, ease, 0s);
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        @include animation(borderToDown, 300ms, ease, 300ms);
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        @include absPos(false, 0, 0, false);
+      }
+
+      &:nth-child(4) {
+        border-left: $border;
+      }
+    }
   }
+}
 
-  li {
-    position: absolute;
-    height: 100%;
+.button-wrapper.purple {
+  button {
+    background-color: $purple;
 
-    &:first-child {
-      border-top: $border;
-      @include animation(borderToRight, 1s, 0s);
+    &:hover {
+      background-color: transparent;
+      color: $purple;
     }
 
-    &:first-child,
-    &:nth-child(2) {
-      width: 100%;
-      @include absPos(0, false, false, 0);
+    &:hover ~ ul > li {
+      border-color: $purple;
+    }
+  }
+}
+
+.button-wrapper.blue {
+  button {
+    background-color: $blue;
+
+    &:hover {
+      background-color: transparent;
+      color: $blue;
     }
 
-    &:nth-child(3),
-    &:nth-child(4) {
-      width: 50%;
-      @include absPos(false, 0, 0, false);
+    &:hover ~ ul > li {
+      border-color: $blue;
     }
-    &:nth-child(4) {
-      height: 50%;
+  }
+}
+
+.button-wrapper.red {
+  button {
+    background-color: $red;
+
+    &:hover {
+      background-color: transparent;
+      color: $red;
+    }
+
+    &:hover ~ ul > li {
+      border-color: $red;
+    }
+  }
+}
+
+.button-wrapper.yellow {
+  button {
+    background-color: $yellow;
+
+    &:hover {
+      background-color: transparent;
+      color: $yellow;
+    }
+
+    &:hover ~ ul > li {
+      border-color: $yellow;
+    }
+  }
+}
+
+.button-wrapper.green {
+  button {
+    background-color: $green;
+
+    &:hover {
+      background-color: transparent;
+      color: $green;
+    }
+
+    &:hover ~ ul > li {
+      border-color: $green;
     }
   }
 }

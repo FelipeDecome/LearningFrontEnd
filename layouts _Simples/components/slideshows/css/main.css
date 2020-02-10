@@ -1,0 +1,166 @@
+@-webkit-keyframes appearRight {
+  from {
+    right: -1024px;
+    opacity: 0;
+  }
+  85% {
+    right: 50px;
+  }
+  to {
+    right: 0;
+  }
+}
+@-moz-keyframes appearRight {
+  from {
+    right: -1024px;
+    opacity: 0;
+  }
+  85% {
+    right: 50px;
+  }
+  to {
+    right: 0;
+  }
+}
+@-ms-keyframes appearRight {
+  from {
+    right: -1024px;
+    opacity: 0;
+  }
+  85% {
+    right: 50px;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes appearRight {
+  from {
+    right: -1024px;
+    opacity: 0;
+  }
+  85% {
+    right: 50px;
+  }
+  to {
+    right: 0;
+  }
+}
+@-webkit-keyframes fadeToBack {
+  to {
+    transform: scale(0);
+  }
+}
+@-moz-keyframes fadeToBack {
+  to {
+    transform: scale(0);
+  }
+}
+@-ms-keyframes fadeToBack {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes fadeToBack {
+  to {
+    transform: scale(0);
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  background: transparent;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-wrapper {
+  position: relative;
+  width: 1024;
+  display: flex;
+  flex-direction: row;
+  height: 720px;
+  overflow: hidden;
+}
+
+.image-list {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+}
+.image-list .image img {
+  position: absolute;
+  width: 1024px;
+  height: 720px;
+}
+.image-list .image.active img {
+  -webkit-animation: appearRight 1s ease 0s normal backwards;
+  -moz-animation: appearRight 1s ease 0s normal backwards;
+  -ms-animation: appearRight 1s ease 0s normal backwards;
+  -o-animation: appearRight 1s ease 0s normal backwards;
+  animation: appearRight 1s ease 0s normal backwards;
+}
+.image-list .image.fade img {
+  -webkit-animation: fadeToBack 1s ease 0s normal backwards;
+  -moz-animation: fadeToBack 1s ease 0s normal backwards;
+  -ms-animation: fadeToBack 1s ease 0s normal backwards;
+  -o-animation: fadeToBack 1s ease 0s normal backwards;
+  animation: fadeToBack 1s ease 0s normal backwards;
+}
+.image-list .image .image-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  padding: 40px 0;
+  background-color: rgba(37, 37, 37, 0.3);
+  bottom: 50px;
+  left: 0;
+}
+.image-list .image .image-info p {
+  text-indent: 30px;
+  width: 80%;
+}
+.image-list .image .image-info * {
+  margin: 10px 0;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slider-controls .control-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.slider-controls .control-list .control {
+  width: 15px;
+  height: 15px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: rgba(37, 37, 37, 0.3);
+  transition: all 300ms;
+  cursor: pointer;
+}
+.slider-controls .control-list .control:hover, .slider-controls .control-list .control.active {
+  background-color: #b21cb5;
+}
+
+/*# sourceMappingURL=main.css.map */
