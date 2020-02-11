@@ -163,4 +163,10 @@
   background-color: #b21cb5;
 }
 
+.teste {
+  display: flex;
+  width: 1024px;
+  flex-wrap: wrap;
+}
+
 /*# sourceMappingURL=main.css.map */
