@@ -1,19 +1,15 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   outline: none;
   text-decoration: none;
   list-style: none;
-}
+} */
 
-.card-wrapper {
-  height: 100vh;
-  display: flex;
+body {
+  /* height: 100vh; */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  background: rgba(0, 102, 140, 0.16);
-}
-
-.bg-white-radial {
-  background: -webkit-radial-gradient(#fff 65%, #eee);
+  align-items: center; */
+  background: rgba(0, 102, 140, 0.07);
 }
