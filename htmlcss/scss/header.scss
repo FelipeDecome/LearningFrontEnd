@@ -1,0 +1,36 @@
+header {
+  position: fixed;
+  @include flex(100%, row, space-evenly, center);
+  padding: 25px 50px 15px;
+  background-color: #111;
+  color: #ffffff;
+
+  & .logo {
+    cursor: pointer;
+
+    transition: all 300ms ease;
+    font-weight: bold;
+    font-size: 24px;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  & nav {
+    & ul {
+      @include flex(100%, row, space-between);
+
+      & li {
+        transition: all 300ms ease;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 0 20px;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import "main.scss";
+@import "header.scss";
+
+.cover {
+  width: 100%;
+  height: 400px;
+  @include background-cover("./../images/chairs.jpg");
+}
+
+main,
+section {
+  @include flex(100%, row, center, false);
+}
+
+main {
+  background: #1f1f1f;
+  color: #eee;
+}
+
+.main-wrapper,
+.beneficios-wrapper {
+  @if (100vw >= 1200) {
+    @include flex(50%, column);
+  } @else if(100vw <= 1199 and 100vw >= 768) {
+    @include flex(80%, column);
+  } @else if(100vw <= 767) {
+    @include flex(80%, column);
+  }
+  padding: 50px 0 60px;
+}
+
+.text-blocks-wrapper {
+  @include flex(100%, row, false, stretch);
+
+  .text-block {
+    width: 100%;
+    padding: 0 30px;
+
+    &:not(:first-child) {
+      border-left: 3px solid $blue;
+    }
+  }
+}
+
+.beneficios-wrapper {
+  & .section-wrapper {
+    @include flex(100%, row, space-between, center);
+
+    & .section-items {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: end;
+      padding-right: 80px;
+
+      & li {
+        margin: 10px 0;
+        // color: $blue;
+      }
+    }
+
+    & .section-items,
+    .section-img {
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.title {
+  @include title();
+}
