@@ -15,6 +15,8 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
+  perspective: 800px;
+  /* perspective-origin: 800px; */
 }
 
 section {
@@ -27,7 +29,11 @@ section {
   width: 100%;
   /* opacity: 0.85; */
   padding: 0 0 30px;
-  transition: all 1s ease;
+  transition: all 1.5s ease;
+}
+
+section.active {
+  z-index: 1;
 }
 
 section:not(.active) {
@@ -81,26 +87,27 @@ button {
   transition: all 500ms ease;
   cursor: pointer;
 }
+
 button:hover {
   bottom: 15px;
 }
 
 .fade {
+  z-index: 0;
   top: 0;
-  animation: fade 1s ease;
+  animation: fade 2s ease backwards
 }
 
 @keyframes fade {
   0% {
     top: 0;
-
-    opacity: 1;
+    /* opacity: 1; */
     transform: scale3d(1, 1, 1);
   }
+
   100% {
     top: 0;
-
-    transform: scale3d(0.1, 0.1, 0.1);
-    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translateZ(800px);
+    /* opacity: 0; */
   }
 }
