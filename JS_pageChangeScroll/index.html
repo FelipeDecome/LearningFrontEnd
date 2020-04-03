@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="red active" id="first">
+      <button data-target="#second">
+        Clique em Mim!
+      </button>
+    </section>
+    <section class="green" id="second">
+      <button data-target="#third">Clique em Mim!</button>
+    </section>
+    <section class="orange" id="third">
+      <button data-target="#fourth">Clique em Mim!</button>
+    </section>
+    <section class="blue" id="fourth">
+      <button data-target="#first">Clique em Mim!</button>
+    </section>
+
+    <script src="js/js.js"></script>
+  </body>
+</html>
