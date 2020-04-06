@@ -1,3 +1,10 @@
+:root {
+  --orange: #ee6c4d;
+  --dBlue: #293241;
+  --blue: #3d5a80;
+  --lBlue: #e0fbfc;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +21,7 @@ body {
   background: #999;
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   perspective: 800px;
   /* perspective-origin: 800px; */
 }
@@ -40,36 +47,37 @@ section:not(.active) {
   top: 100vh;
 }
 
-.red {
-  background-color: red;
+.one {
+  background-color: var(--orange);
 }
 
-.red button {
-  color: red;
+.one button {
+  color: var(--orange);
 }
 
-.green {
-  background-color: green;
+.two {
+  background-color: var(--lBlue);
 }
 
-.green button {
-  color: green;
+.two button {
+  background: var(--dBlue);
+  color: var(--lBlue);
 }
 
-.orange {
-  background-color: orange;
+.three {
+  background-color: var(--blue);
 }
 
-.orange button {
-  color: orange;
+.three button {
+  color: var(--blue);
 }
 
-.blue {
-  background-color: blue;
+.four {
+  background-color: var(--dblue);
 }
 
-.blue button {
-  color: blue;
+.four button {
+  color: var(--dblue);
 }
 
 .active button {
@@ -95,7 +103,7 @@ button:hover {
 .fade {
   z-index: 0;
   top: 0;
-  animation: fade 2s ease backwards
+  animation: fade 2s ease backwards;
 }
 
 @keyframes fade {
