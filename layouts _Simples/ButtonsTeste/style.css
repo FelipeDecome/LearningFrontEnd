@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+}
+
+li {
+  border: 1px solid #BD34D1;
+  padding: 6px 25px;
+  border-radius: 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #BD34D1;
+}
+
+li:hover {
+  border-color: transparent;
+  background-color: #E5AEED;
+}
